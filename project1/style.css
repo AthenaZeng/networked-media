@@ -1,0 +1,43 @@
+p,
+ul,
+h1 {
+  color: saddlebrown;
+}
+.head{
+    text-align: center;
+    font-size: 25px;
+}
+.text-center {
+  text-align: center;
+  font-size: 22px;
+}
+.ending {
+  text-align: left;
+  font-size: 22px;
+}
+.food-img {
+  width: 270px;
+  height: auto;
+  border-radius: 100px;
+  display: block;
+  margin: auto;
+  display: inline-block;
+}
+
+.image {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: auto;
+}
+.image:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+body {
+  background-image: url("background.jpg");
+  background-size: cover;
+  background-position: center;
+}
