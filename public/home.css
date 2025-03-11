@@ -1,0 +1,20 @@
+.sidebar{
+    background-color: #bf911d;
+    display: flex;
+    justify-content: space-between;
+    width: 80%; 
+
+}
+.leftHome {
+    width: 40%; 
+    background-color: lightblue;
+    height: 100px;
+}
+
+.rightHome {
+    width: 40%; 
+    background-color: lightcoral;
+    height: 100px;
+    position: relative;
+    left: 50%; 
+}

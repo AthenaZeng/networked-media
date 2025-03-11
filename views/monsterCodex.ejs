@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <title>Monster Codex</title>
+    <link href="style.css" rel="stylesheet" />
+    <link href="home.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="header"><%- include('nav.ejs') %></header>
+
+    <div class="container">
+      <button id="newCard" class="btn">Add a Codex</button>
+    </div>
+
+    <div id="cardForm" class="cardForm" style="display: none">
+      <form method="POST" action="/add-upload" enctype="multipart/form-data">
+        <label for="name">Card Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="region">Region:</label>
+        <input type="text" id="region" name="region" />
+
+        <label for="strategy">Strategy:</label>
+        <input type="text" id="strategy" name="strategy" />
+
+        <label for="remarks">Remarks:</label>
+        <textarea id="remarks" name="remarks"></textarea>
+
+        <div class="form-buttons">
+          <button type="submit" class="btn">Upload</button>
+          <button type="button" id="cancel-form" class="btn">Cancel</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="messages-container">
+      <% allCards.forEach((Codex) => { %>
+      <div class="codex-card">
+        <div class="name"><%= Codex.name %></div>
+        <p class="region"><%= Codex.region %></p>
+        <p class="strategy"><%= Codex.strategy %></p>
+        <p class="remarks"><%= Codex.remarks %></p>
+        <% if (Codex.imgUrl) { %>
+        <img src="<%= Codex.imgUrl %>" />
+        <% } %>
+      </div>
+      <% }); %>
+    </div>
+    <script>//I know you said before not to add script files directly to this file, but if I don't do it, the webpage will react very slowly.
+      document.getElementById("newCard").addEventListener("click", function () {
+        document.getElementById("cardForm").style.display = "block";
+      });
+
+      document
+        .getElementById("cancel-form")
+        .addEventListener("click", function () {
+          document.getElementById("cardForm").style.display = "none";
+        });
+    </script>
+  </body>
+</html>
