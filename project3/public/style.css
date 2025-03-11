@@ -1,0 +1,104 @@
+body{
+    background-color: #E8D7AE;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow-y: hidden
+}
+header{
+    width: 100%;
+}
+.nav-bar{
+    background-color: #DABE7A;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+}
+
+.nav-element{
+    background-color: #D0B164;
+    height: 100px;
+    width: 100px;
+    margin-bottom: 2px;
+    opacity: 0.5;
+    transition: opacity 1s ease-in, background-color 1s ease-in;
+}
+
+.nav-element:hover{
+    background-color: #C09E4B;
+    opacity: 1;
+    transition: opacity 1s ease-out, background-color 1s ease-in;
+}
+
+.input-container {
+    border: 5px solid blue;
+    padding: 10px;
+    margin: auto;
+    width: 60%;
+  }
+  input[type="text"] {
+    width: 100%;
+  }
+  .controls-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 10px;
+  }
+  input[type="submit"] {
+      border:none
+  }
+  .card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card {
+    display: flex;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.card-image {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.basic-info h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.details h4 {
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.details p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.details .region, .strategy, .remarks {
+    margin-bottom: 15px;
+}

@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>Forum</title>
+    <link href="style.css" rel="stylesheet" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <header class="header"><%- include('nav.ejs') %></header>
+
+    <div class="filter-buttons">
+      <button onclick="filterPosts('all')">All posts</button>
+      <button onclick="filterPosts('help')">For help</button>
+      <button onclick="filterPosts('chat')">Chat</button>
+      <button onclick="filterPosts('share')">Share</button>
+    </div>
+
+    <div class="input-container">
+      <form method="POST" action="/upload" enctype="multipart/form-data">
+        <input type="text" name="username" placeholder="enter your name" />
+        <input type="text" name="title" placeholder="title" />
+        <input type="text" name="text" placeholder="leave a kind comment!" />
+        <select name="tag">
+          <option value="help">For help</option>
+          <option value="chat">Chat</option>
+          <option value="share">Share</option>
+        </select>
+        <div class="controls-container">
+          <input type="file" name="theimage" />
+          <input type="submit" name="submit" value="send" />
+        </div>
+      </form>
+    </div>
+
+    <div class="messages-container">
+      <% allPosts.forEach((post, index) => { %>
+      <div
+        class="post-item"
+        data-tag="<%= post.tag %>"
+        data-index="<%= index %>"
+      >
+        <div class="date"><%= post.date %></div>
+        <p class="user"><%= post.user %></p>
+        <p class="title"><strong>Title：</strong> <%= post.title %></p>
+        <p class="text"><%= post.text %></p>
+        <% if (post.imgUrl) { %>
+        <img src="<%= post.imgUrl %>" />
+        <% } %>
+        <form action="/like/<%= index %>" method="POST">
+          <button type="submit" class="like-btn">
+            ❤️ (<span><%= post.likes %></span>)
+          </button>
+        </form>
+      </div>
+      <% }); %>
+    </div>
+  </body>
+</html>
