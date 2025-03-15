@@ -2,15 +2,31 @@
   <head>
     <title>Home Page</title>
     <link href="style.css" rel="stylesheet" />
-    <link href="home.css" rel="stylesheet" />
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>
-    <header class="header"><%- include('nav.ejs') %></header>
 
-    <div class="sidebar">
-        <div class="leftHome"></div>
-        <div class="rightHome"></div>
+  <body>
+    <%- include('nav.ejs') %>
+    <div class="connent">
+      <div class="ephesis-regular" ,class="con">
+        <div class="titleH">Hunting Notes</div>
+        <div class="content1">
+          <p class="word">
+            Welcome to this website! The purpose of the website is to assist
+            monster hunters in recording and sharing diverse monster
+            information, as well as discussing combat experiences. We also
+            welcome the recording of various real-life creatures.
+          </p>
+          <div class="ima1"><img src="dragon.png" /></div>
+        </div>
+      </div>
+
+      <div class="ima"><img src="map.jpeg" /></div>
     </div>
   </body>
 </html>

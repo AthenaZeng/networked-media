@@ -1,5 +1,5 @@
 function filterPosts(tag) {
-  let posts = document.querySelectorAll(".post-item");
+  let posts = document.querySelectorAll(".item");
 
   posts.forEach((post) => {
     if (tag == "all") {
