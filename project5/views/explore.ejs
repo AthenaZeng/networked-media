@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <title>Explore Postcards</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="popup">
+      <div class="popup-header">
+        <%- include('nav.ejs') %> <% if (currentUser) { %>
+        <div>
+          <a href="/explore?view=all" class="lo">View All</a>
+          <a href="/explore?view=mine" class="lo">View Mine</a>
+        </div>
+
+        <p>Logged in as: <%= currentUser %></p>
+        <% } else { %>
+        <p>
+          <a href="/login" class="lo">Log in</a> to post or see your own
+          postcards.
+        </p>
+        <% } %>
+        <button class="popup-close" onclick="window.history.back()">X</button>
+      </div>
+      <div class="popup-body">
+        <% posts.forEach(function(post) { %>
+        <div class="card">
+          <div class="group">
+            <% if (post.words) { post.words.forEach(function(wordItem, index) {
+            %>
+            <div
+              class="flower-item"
+              data-word="<%= wordItem.word %>"
+              style="animation-delay: 0.2s"
+            >
+              <img src="<%= wordItem.image %>" />
+            </div>
+            <% }); } %>
+          </div>
+        </div>
+        <div class="postcard-info">
+          <strong class="username"><%= post.username %></strong>
+          <span class="timestamp"><%= new Date(post.timestamp).toLocaleString() %></span>
+          <form
+            action="/delete-postcard/<%= post._id %>"
+            method="POST"
+            style="display: inline"
+          >
+            <button
+              class="delete-btn"
+              type="submit"
+              onclick="return confirm('Are you sure to delete this postcard?');"
+            >
+              🗑
+            </button>
+          </form>
+        </div>
+
+        <% }); %>
+      </div>
+    </div>
+    <img src="de (4).png" class="corner-image left" />
+    <img src="de (2).png" class="corner-image right" />
+  </body>
+</html>

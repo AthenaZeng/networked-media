@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Postcard Making</title>
+    <link href="style.css" rel="stylesheet" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="popup">
+      <div class="popup-header">
+        <%- include('nav.ejs') %>
+        <button class="popup-close" onclick="window.history.back()">X</button>
+      </div>
+      <div class="form-container">
+        <h1>Enter some words</h1>
+        <form method="POST" action="/submit-words">
+          <textarea class="create"
+            placeholder="Enter the words, separated by spaces"
+            rows="5"
+          ></textarea>
+          <button type="submit" class="submit-btn">submit</button>
+        </form>
+      </div>
+    </div>
+    <img src="de (3).png" class="corner-image left" />
+    <img src="de (1).png" class="corner-image right" />
+  </body>
+</html>

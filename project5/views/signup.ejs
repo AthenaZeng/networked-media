@@ -1,0 +1,37 @@
+<body>
+  <div class="popup">
+    <div class="popup-header">
+      <%- include('nav.ejs') %>
+      <button class="popup-close">X</button>
+    </div>
+    <div class="form-container">
+      <h1>Register for a new account!</h1>
+      <form method="POST" action="/signup" enctype="multipart/form-data">
+        <div class="register-content-container">
+          <input
+            type="text"
+            name="username"
+            placeholder="choose a username"
+            class="login-username"
+          />
+
+          <input
+            type="password"
+            name="password"
+            placeholder="choose a password"
+            class="login-password"
+          />
+
+          <input
+            type="submit"
+            name="submitbutton"
+            value="make my account!"
+            class="submit-btn"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+  <img src="de (5).png" class="corner-image left" />
+  <img src="de (2).png" class="corner-image right" />
+</body>
